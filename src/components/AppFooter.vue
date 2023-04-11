@@ -1,11 +1,10 @@
 <script>
 
 import { store } from "../store.js";
-import AppCard from "./AppCard.vue";
 
 export default {
 
-    name: "AppMain",
+    name: "AppFooter",
 
     data() {
 
@@ -16,9 +15,7 @@ export default {
         }
     },
 
-    components: {
-        AppCard
-    },
+    emits: [''],
 
 };
 
@@ -26,8 +23,8 @@ export default {
 
 
 <template>
-    <main>
-    </main>
+    <footer>
+    </footer>
 </template>
 
 

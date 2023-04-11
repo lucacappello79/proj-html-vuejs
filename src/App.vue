@@ -2,6 +2,9 @@
 import { store } from "./store.js";
 
 import AppHeader from "./components/AppHeader.vue";
+import AppMain from "./components/AppHeader.vue";
+import AppFooter from "./components/AppHeader.vue";
+
 
 
 export default {
@@ -15,7 +18,7 @@ export default {
 
     AppHeader,
     AppMain,
-    AppSeries,
+    AppFooter,
 
   },
 
@@ -25,15 +28,6 @@ export default {
 
   methods: {
 
-    searchMovieOrShow() {
-
-      axios.get(this.store.APIcallMovies + this.store.movieOrShow).then((res) => {
-        console.log(res);
-        console.log(res.data.results)
-        this.store.movies = res.data.results;
-      });
-
-    },
 
   },
 
@@ -45,13 +39,9 @@ export default {
   <div class="container">
     <AppHeader @searchMovieOrShowEvent="searchMovieOrShow()"></AppHeader>
     <AppMain></AppMain>
-    <AppSeries></AppSeries>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
 
-<style lang="scss">
-.container {
-  overflow: hidden;
-}
-</style>
+<style lang="scss"></style>
