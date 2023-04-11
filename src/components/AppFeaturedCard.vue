@@ -4,7 +4,7 @@ import { store } from "../store.js";
 
 export default {
 
-    name: "AppCard",
+    name: "AppFeaturedCard",
 
     data() {
 
@@ -15,15 +15,21 @@ export default {
         }
     },
 
+    props: {
+
+        img: String,
+
+    },
+
+
 };
 
 </script>
 
 
 <template>
-    <div class="card-wrapper">
-        <img src="" alt="">
-
+    <div class="card">
+        <img :src="img" alt="fnf">
     </div>
 </template>
 
@@ -31,4 +37,14 @@ export default {
   
 <style lang="scss" scoped>
 @use "../scss/variables" as *;
+
+.card {
+    width: calc(100% / 3);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
 </style>
