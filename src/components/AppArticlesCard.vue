@@ -63,7 +63,7 @@ export default {
 
     &:hover {
         scale: 1.1;
-        z-index: 999;
+        z-index: 2;
     }
 
     .date {

@@ -58,7 +58,7 @@ export default {
 
     &:hover {
         scale: 1.05;
-        z-index: 999;
+        z-index: 2;
     }
 
     .card-overlay {

@@ -33,13 +33,27 @@ export default {
 </script>
 
 
-<template>
+<!-- <template>
     <section id="articles">
         <div class="scroll-up" @click="scrollTop">
             <i class="fa-solid fa-arrow-up-long"></i>
         </div>
         <div class="articles-wrapper">
 
+            <AppArticlesCard v-for="(item, index) in store.articles" :img="item.img_path" :description="item.description"
+                :author="item.author" :day="item.day" :date="item.month">
+            </AppArticlesCard>
+
+        </div>
+    </section>
+</template> -->
+
+<template>
+    <section id="articles">
+        <div class="articles-wrapper">
+            <div class="scroll-up" @click="scrollTop">
+                <i class="fa-solid fa-arrow-up-long"></i>
+            </div>
             <AppArticlesCard v-for="(item, index) in store.articles" :img="item.img_path" :description="item.description"
                 :author="item.author" :day="item.day" :date="item.month">
             </AppArticlesCard>
@@ -55,7 +69,7 @@ export default {
 
 
 section {
-    position: relative;
+    // position: relative;
 
     .scroll-up {
         width: 27px;
@@ -70,12 +84,14 @@ section {
         justify-content: center;
         align-items: center;
         border-radius: 50%;
+        z-index: 999;
 
         &:hover {
             border: 1px solid #c0e1cf;
             background-color: #fff;
             scale: 1.05;
             color: #c0e1cf;
+            z-index: 999;
         }
     }
 
@@ -83,6 +99,7 @@ section {
 
 .articles-wrapper {
     @include centered;
+    position: relative;
 
     display: flex;
     justify-content: space-between;

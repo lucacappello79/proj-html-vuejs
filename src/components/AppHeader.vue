@@ -78,6 +78,10 @@ header {
             a {
                 color: #575757;
             }
+
+            &:hover {
+                scale: 1.1;
+            }
         }
 
         li:hover::before {

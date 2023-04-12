@@ -34,7 +34,7 @@ export default {
 </script>
 
 
-<template>
+<!-- <template>
     <section id="workflow">
         <div class="scroll-up" @click="scrollTop">
             <i class="fa-solid fa-arrow-up-long"></i>
@@ -53,16 +53,36 @@ export default {
 
         </div>
     </section>
+</template> -->
+
+<template>
+    <section id="workflow">
+
+        <div class="workflow-wrapper">
+            <div class="scroll-up" @click="scrollTop">
+                <i class="fa-solid fa-arrow-up-long"></i>
+            </div>
+            <div class="background-image-container"></div>
+            <div class="section-title">
+                Working
+                <strong>process</strong>
+            </div>
+            <div class="process">
+                <AppWorkFlowCard v-for="(item, index) in store.workflowSteps" :icon="item.icon" :color="item.color"
+                    :title="item.title" :description="item.description">
+                </AppWorkFlowCard>
+            </div>
+
+        </div>
+    </section>
 </template>
-
-
   
 <style lang="scss" scoped>
 @use "../scss/variables" as *;
 
-section {
-    position: relative;
-}
+// section {
+//     position: relative;
+// }
 
 .scroll-up {
     width: 27px;
@@ -76,12 +96,14 @@ section {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    z-index: 999;
 
     &:hover {
         border: 1px solid #f0817b;
         background-color: #fff;
         scale: 1.05;
         color: #f0817b;
+        z-index: 999;
     }
 }
 
