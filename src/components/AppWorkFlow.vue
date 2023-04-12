@@ -28,6 +28,9 @@ export default {
 
 <template>
     <section>
+        <div class="scroll-up">
+            <i class="fa-solid fa-arrow-up-long"></i>
+        </div>
         <div class="workflow-wrapper">
             <div class="background-image-container"></div>
             <div class="section-title">
@@ -49,17 +52,31 @@ export default {
 <style lang="scss" scoped>
 @use "../scss/variables" as *;
 
+section {
+    position: relative;
+}
+
+.scroll-up {
+    width: 27px;
+    height: 27px;
+    color: white;
+    // background-color: #f0817b;
+    background-color: #c0e1cf;
+    position: absolute;
+    bottom: 25px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
 .workflow-wrapper {
 
     @include centered();
 
     text-align: center;
     position: relative;
-    // background-image: url('/img/svg-3.svg');
-    // background-repeat: no-repeat;
-    // background-position-y: center;
-    // background-size: contain;
-
     padding: 50px 0 80px;
     text-align: center;
 

@@ -15,23 +15,50 @@ export default {
         }
     },
 
+    mounted() {
+        const buttonContainer = this.$refs.buttonContainer;
+        const cursorDot = this.$refs.cursorDot;
+
+        buttonContainer.addEventListener("mousemove", (e) => {
+            const rect = buttonContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            cursorDot.style.left = `${x}px`;
+            cursorDot.style.top = `${y}px`;
+        });
+
+        buttonContainer.addEventListener("mouseenter", () => {
+            cursorDot.style.display = "block";
+        });
+
+        buttonContainer.addEventListener("mouseleave", () => {
+            cursorDot.style.display = "none";
+        });
+    },
+
 };
 
 </script>
 
 
 <template>
-    <div class="joinus-wrapper">
-        <div class="section-title">
-            Want to work with us?
-            <span>Send us <strong>a message!</strong></span>
+    <section>
+        <div class="joinus-wrapper">
+            <div class="section-title">
+                Want to work with us?
+                <span>Send us <strong>a message!</strong></span>
+            </div>
+            <p>"Are you passionate, driven, and eager to make a difference? Join our dynamic team at <i
+                    class="fa-regular fa-copyright"></i>Merée and
+                embark on an exciting journey of growth, innovation, and collaboration. Let's shape a better future
+                together!"
+            </p>
+            <div ref="buttonContainer" class="button-container">
+                <button>CONTACT</button>
+                <div ref="cursorDot" class="cursor-dot"></div>
+            </div>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sint molestiae consequatur ratione, excepturi
-            assumenda a tenetur ducimus eligendi
-            repellat repudiandae nam.</p>
-        <button>CONTACT</button>
-
-    </div>
+    </section>
 </template>
 
 
@@ -39,14 +66,15 @@ export default {
 <style lang="scss" scoped>
 @use "../scss/variables" as *;
 
-.joinus-wrapper {
-    @include centered;
-
+section {
     background-image: url('/img/h-2-background-1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 300px;
+}
+
+.joinus-wrapper {
+    @include centered;
 
     padding: 60px 0;
     text-align: center;
@@ -64,16 +92,54 @@ export default {
 
     p {
         @include centered-inner;
-        margin-bottom: 20px;
+        color: grey;
+        font-size: 15px;
+        // margin-bottom: 40px;
+        margin: 30px auto 40px;
 
     }
 }
 
-button {
-    font-weight: bold;
-    padding: 12px 50px;
-    background-color: #d8f0e3;
-    outline: none;
-    border: none;
+.button-container {
+
+    position: relative;
+
+    button {
+        font-weight: bold;
+        padding: 12px 50px;
+        background-color: #d8f0e3;
+        outline: none;
+        border: none;
+        cursor: none;
+        transition: background-color 0.3s ease;
+    }
+
+    &:hover button {
+        background-color: #e1c0b0;
+        color: white;
+    }
+
+    // &:hover::before {
+    //     content: '';
+    //     position: absolute;
+    //     width: 10px;
+    //     height: 10px;
+    //     border-radius: 50%;
+    //     background-color: black;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+    //     pointer-events: none;
+    // }
+
+    .cursor-dot {
+        display: none;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #f5d8ca;
+        pointer-events: none;
+    }
 }
 </style>

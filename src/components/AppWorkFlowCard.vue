@@ -63,7 +63,7 @@ export default {
     align-items: center;
 
     .card-img {
-        background-color: beige;
+        background-color: #faf7f1;
         width: 40%;
         padding-top: 40%;
         border-radius: 50%;

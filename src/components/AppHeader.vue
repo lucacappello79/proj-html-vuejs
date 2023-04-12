@@ -36,7 +36,7 @@ export default {
                 </ul>
 
                 <div class="header-dot-menu">
-                    hamb
+                    <img src="/img/svg-1.svg" alt="">
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    padding: 15px;
+    padding: 15px 0;
 }
 
 .header-menu {
@@ -90,7 +90,7 @@ header {
     }
 
     .header-dot-menu {
-        margin: 0 20px;
+        margin-left: 20px;
     }
 
 }

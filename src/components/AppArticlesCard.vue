@@ -50,7 +50,9 @@ export default {
 @use "../scss/variables" as *;
 
 .card-content {
-    width: 250px;
+    width: calc(100% / 4);
+    // flex: 1;
+    //width: calc(25% - 30px);
 
     img {
         width: 100%;
