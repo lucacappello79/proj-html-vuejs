@@ -53,6 +53,12 @@ export default {
             <div class="scroll-up" @click="scrollTop">
                 <i class="fa-solid fa-arrow-up-long"></i>
             </div>
+            <div class="cart">
+                <img src="/img/svg-6.svg" alt="fnf">
+            </div>
+            <div class="circle">
+                <img src="/img/svg-7.svg" alt="fnf">
+            </div>
             <AppFeaturedCard v-for="(item, index) in store.featuredCards" :img="item.img" :title="item.title"
                 :description="item.description" :background="item.color">
             </AppFeaturedCard>
@@ -99,6 +105,39 @@ export default {
     position: relative;
     display: flex;
     flex-flow: row wrap;
+
+    .cart,
+    .circle {
+        position: absolute;
+        right: 0;
+        z-index: 3;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circle {
+        top: 10%;
+        background-color: red;
+
+        img {
+            width: 70%;
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    .cart {
+        top: 14%;
+        background-color: white;
+
+        img {
+            width: 50%;
+        }
+    }
+
+
 
     .scroll-up {
         width: 27px;
