@@ -2,6 +2,7 @@
 
 import { store } from "../store.js";
 
+
 export default {
 
     name: "AppFooter",
@@ -15,6 +16,15 @@ export default {
         }
     },
 
+
+    methods: {
+        scrollTop() {
+
+            window.scrollTo({ top: 0, behavior: "smooth" });
+
+        },
+    },
+
     emits: [''],
 
 };
@@ -23,8 +33,8 @@ export default {
 
 
 <template>
-    <footer>
-        <div class="scroll-up">
+    <footer id="contacts">
+        <div class="scroll-up" @click="scrollTop">
             <i class="fa-solid fa-arrow-up-long"></i>
         </div>
         <div class="footer-wrapper">
@@ -85,6 +95,14 @@ footer {
         justify-content: center;
         align-items: center;
         border-radius: 50%;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            border: 1px solid #f0817b;
+            background-color: #fff;
+            scale: 1.05;
+            color: #f0817b;
+        }
     }
 
     .footer-wrapper {

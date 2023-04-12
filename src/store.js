@@ -4,12 +4,12 @@ export const store = reactive({
 
     menuItems: [
 
-        { label: 'home' },
-        { label: 'pages' },
-        { label: 'portfolio' },
-        { label: 'blog' },
-        { label: 'shop' },
-        { label: 'elements' },
+        { label: 'home', id: "jumbo" },
+        { label: 'featured', id: "featured" },
+        { label: 'workflow', id: "workflow" },
+        { label: 'join us', id: "join" },
+        { label: 'articles', id: "articles" },
+        { label: 'contacts', id: "contacts" },
     ],
 
     featuredCards: [
@@ -59,21 +59,29 @@ export const store = reactive({
             img_path: '/img/h-2-blog-img-1.jpg',
             description: 'This way, loves: a detailed guide through new design',
             author: 'By Emily Fields',
+            day: "07",
+            month: "MAY '19",
         },
         {
             img_path: '/img/h-2-blog-img-2.jpg',
             description: 'I try to give people a different way of looking at art',
             author: 'By Morgan Freeman',
+            day: "30",
+            month: "FEB '23",
         },
         {
             img_path: '/img/h-2-blog-img-3.jpg',
             description: 'Introduce richard Laperriere of those amazing features',
             author: 'By Kawhy Lenard',
+            day: "24",
+            month: "JUN '20",
         },
         {
             img_path: '/img/rsz_teamwork.png',
             description: 'Join us on our daily broadcast on TNT with Ernie, Kenny and Charles',
             author: 'By The Inside Crew',
+            day: "12",
+            month: "DEC '22",
         },
 
     ],

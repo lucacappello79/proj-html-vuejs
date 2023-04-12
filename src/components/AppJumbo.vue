@@ -21,9 +21,11 @@ export default {
 
 
 <template>
-    <div class="slider-wrapper">
+    <section id="jumbo">
+        <div class="slider-wrapper">
 
-    </div>
+        </div>
+    </section>
 </template>
 
 

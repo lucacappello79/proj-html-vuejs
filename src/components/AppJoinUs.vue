@@ -42,7 +42,7 @@ export default {
 
 
 <template>
-    <section>
+    <section id="join">
         <div class="joinus-wrapper">
             <div class="section-title">
                 Want to work with us?
@@ -105,6 +105,7 @@ section {
     position: relative;
 
     button {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-weight: bold;
         padding: 12px 50px;
         background-color: #d8f0e3;

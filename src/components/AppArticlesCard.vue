@@ -19,6 +19,8 @@ export default {
         img: String,
         description: String,
         author: String,
+        day: Number,
+        date: Number,
     },
 
 
@@ -29,6 +31,10 @@ export default {
 
 <template>
     <div class="card-content">
+        <div class="date">
+            <div class="date-top">{{ day }}</div>
+            <div class="date-bottom">{{ date }}</div>
+        </div>
         <div class="card-img">
             <img :src="img" alt="fnf">
         </div>
@@ -51,8 +57,46 @@ export default {
 
 .card-content {
     width: calc(100% / 4);
+    position: relative;
     // flex: 1;
     //width: calc(25% - 30px);
+
+    &:hover {
+        scale: 1.1;
+        z-index: 999;
+    }
+
+    .date {
+        text-align: center;
+        position: absolute;
+        top: -20px;
+        left: 20px;
+        z-index: 1;
+
+        width: 50px;
+
+        .date-top {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 25px;
+            font-size: larger;
+            height: 25px;
+            font-weight: bolder;
+            background-color: #d8f0e3;
+            transform: skew(20deg);
+            transform-origin: left bottom;
+        }
+
+        .date-bottom {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 25px;
+            font-size: 10px;
+            font-weight: bold;
+            height: 25px;
+            background-color: #fad02c;
+            transform: skew(-20deg);
+            transform-origin: left bottom;
+        }
+    }
 
     img {
         width: 100%;

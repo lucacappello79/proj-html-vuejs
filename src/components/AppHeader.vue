@@ -29,7 +29,7 @@ export default {
             <div class="header-menu">
                 <ul>
                     <li v-for="(item, index) in store.menuItems">
-                        <a href="">
+                        <a :href="'#' + item.id">
                             {{ item.label.toUpperCase() }}
                         </a>
                     </li>
@@ -57,7 +57,7 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    padding: 15px 0;
+    padding: 15px;
 }
 
 .header-menu {
@@ -66,10 +66,14 @@ header {
 
     ul {
         display: flex;
+        align-items: center;
         gap: 35px;
 
         li {
             position: relative;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+            font-size: 13px;
 
             a {
                 color: #575757;
@@ -80,8 +84,8 @@ header {
 
             width: 115%;
             height: 5px;
-            background-color: #f0817b;
-            opacity: 0.5;
+            background-color: #e57c78;
+            opacity: 0.4;
 
             content: "";
             position: absolute;

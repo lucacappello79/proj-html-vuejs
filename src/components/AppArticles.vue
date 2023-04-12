@@ -18,7 +18,15 @@ export default {
 
     components: {
         AppArticlesCard
-    }
+    },
+
+    methods: {
+        scrollTop() {
+
+            window.scrollTo({ top: 0, behavior: "smooth" });
+
+        },
+    },
 
 };
 
@@ -26,14 +34,14 @@ export default {
 
 
 <template>
-    <section>
-        <div class="scroll-up">
+    <section id="articles">
+        <div class="scroll-up" @click="scrollTop">
             <i class="fa-solid fa-arrow-up-long"></i>
         </div>
         <div class="articles-wrapper">
 
             <AppArticlesCard v-for="(item, index) in store.articles" :img="item.img_path" :description="item.description"
-                :author="item.author">
+                :author="item.author" :day="item.day" :date="item.month">
             </AppArticlesCard>
 
         </div>
@@ -62,7 +70,15 @@ section {
         justify-content: center;
         align-items: center;
         border-radius: 50%;
+
+        &:hover {
+            border: 1px solid #c0e1cf;
+            background-color: #fff;
+            scale: 1.05;
+            color: #c0e1cf;
+        }
     }
+
 }
 
 .articles-wrapper {
@@ -72,7 +88,7 @@ section {
     justify-content: space-between;
     gap: 30px;
     padding: 60px 0;
-    overflow-x: auto;
+    overflow-x: hidden;
     // white-space: nowrap;
     // width: 100%;
 

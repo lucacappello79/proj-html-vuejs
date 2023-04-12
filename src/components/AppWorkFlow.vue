@@ -19,7 +19,15 @@ export default {
 
     components: {
         AppWorkFlowCard,
-    }
+    },
+
+    methods: {
+        scrollTop() {
+
+            window.scrollTo({ top: 0, behavior: "smooth" });
+
+        },
+    },
 
 };
 
@@ -27,8 +35,8 @@ export default {
 
 
 <template>
-    <section>
-        <div class="scroll-up">
+    <section id="workflow">
+        <div class="scroll-up" @click="scrollTop">
             <i class="fa-solid fa-arrow-up-long"></i>
         </div>
         <div class="workflow-wrapper">
@@ -60,8 +68,7 @@ section {
     width: 27px;
     height: 27px;
     color: white;
-    // background-color: #f0817b;
-    background-color: #c0e1cf;
+    background-color: #f0817b;
     position: absolute;
     bottom: 25px;
     right: 15px;
@@ -69,6 +76,13 @@ section {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+
+    &:hover {
+        border: 1px solid #f0817b;
+        background-color: #fff;
+        scale: 1.05;
+        color: #f0817b;
+    }
 }
 
 .workflow-wrapper {
