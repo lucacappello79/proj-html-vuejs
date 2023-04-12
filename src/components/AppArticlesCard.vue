@@ -56,13 +56,13 @@ export default {
 @use "../scss/variables" as *;
 
 .card-content {
-    width: calc(100% / 4);
+    min-width: calc(100% / 4);
     position: relative;
     // flex: 1;
     //width: calc(25% - 30px);
 
     &:hover {
-        scale: 1.1;
+        scale: 1.05;
         z-index: 2;
     }
 

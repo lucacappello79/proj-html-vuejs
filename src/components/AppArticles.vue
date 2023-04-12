@@ -50,14 +50,16 @@ export default {
 
 <template>
     <section id="articles">
-        <div class="articles-wrapper">
+        <div class="scrolling-arrow">
             <div class="scroll-up" @click="scrollTop">
                 <i class="fa-solid fa-arrow-up-long"></i>
             </div>
-            <AppArticlesCard v-for="(item, index) in store.articles" :img="item.img_path" :description="item.description"
-                :author="item.author" :day="item.day" :date="item.month">
-            </AppArticlesCard>
+            <div class="articles-wrapper">
+                <AppArticlesCard v-for="(item, index) in store.articles" :img="item.img_path"
+                    :description="item.description" :author="item.author" :day="item.day" :date="item.month">
+                </AppArticlesCard>
 
+            </div>
         </div>
     </section>
 </template>
@@ -97,17 +99,45 @@ section {
 
 }
 
+// .articles-wrapper {
+//     @include centered;
+//     position: relative;
+
+//     display: flex;
+//     justify-content: space-between;
+//     gap: 30px;
+//     padding: 60px 0;
+
+// }
+.scrolling-arrow {
+    @include centered;
+    position: relative
+}
+
 .articles-wrapper {
     @include centered;
-    position: relative;
+    // position: relative;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 30px;
-    padding: 60px 0;
-    overflow-x: hidden;
-    // white-space: nowrap;
-    // width: 100%;
+    padding: 60px 12px;
+    overflow-x: auto;
+    // 
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #f0817b;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #f0f0f0;
+        border-radius: 4px;
+    }
 
 }
 </style>
