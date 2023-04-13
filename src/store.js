@@ -12,17 +12,10 @@ export const store = reactive({
         { label: 'contacts', id: "contacts" },
     ],
 
-    sliderImg: [
-        {
-            img: '/img/h-2-port-img-15.jpg',
-        },
-        {
-            img: '/img/h-2-slider-img-11.png',
-        },
-        {
-            img: '/img/h-2-slider-img-13.png',
-        },
-
+    sliderImages: [
+        '/img/h-2-slider-img-15.png',
+        '/img/h-2-slider-img-11.png',
+        '/img/short-slider-rev-1-img-3.png',
     ],
 
     featuredCards: [
