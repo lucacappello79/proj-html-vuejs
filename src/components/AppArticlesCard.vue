@@ -56,10 +56,8 @@ export default {
 @use "../scss/variables" as *;
 
 .card-content {
-    min-width: calc(100% / 4);
     position: relative;
-    // flex: 1;
-    //width: calc(25% - 30px);
+    min-width: calc(100% / 4);
 
     &:hover {
         scale: 1.05;
@@ -67,32 +65,37 @@ export default {
     }
 
     .date {
-        text-align: center;
         position: absolute;
         top: -20px;
         left: 20px;
+
         z-index: 1;
+        text-align: center;
 
         width: 50px;
 
         .date-top {
             font-family: 'Times New Roman', Times, serif;
-            line-height: 25px;
             font-size: larger;
-            height: 25px;
             font-weight: bolder;
+            line-height: 25px;
+
+            height: 25px;
             background-color: #d8f0e3;
+
             transform: skew(20deg);
             transform-origin: left bottom;
         }
 
         .date-bottom {
             font-family: 'Times New Roman', Times, serif;
-            line-height: 25px;
             font-size: 10px;
             font-weight: bold;
+            line-height: 25px;
+
             height: 25px;
             background-color: #fad02c;
+
             transform: skew(-20deg);
             transform-origin: left bottom;
         }

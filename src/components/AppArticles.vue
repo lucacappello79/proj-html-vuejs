@@ -33,21 +33,6 @@ export default {
 </script>
 
 
-<!-- <template>
-    <section id="articles">
-        <div class="scroll-up" @click="scrollTop">
-            <i class="fa-solid fa-arrow-up-long"></i>
-        </div>
-        <div class="articles-wrapper">
-
-            <AppArticlesCard v-for="(item, index) in store.articles" :img="item.img_path" :description="item.description"
-                :author="item.author" :day="item.day" :date="item.month">
-            </AppArticlesCard>
-
-        </div>
-    </section>
-</template> -->
-
 <template>
     <section id="articles">
         <div class="scrolling-arrow">
@@ -71,22 +56,22 @@ export default {
 
 
 section {
-    // position: relative;
 
     .scroll-up {
-        width: 27px;
-        height: 27px;
-        color: white;
-        // background-color: #f0817b;
-        background-color: #c0e1cf;
         position: absolute;
         top: 25px;
         right: 15px;
+
         display: flex;
-        justify-content: center;
         align-items: center;
-        border-radius: 50%;
+        justify-content: center;
         z-index: 999;
+
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        color: white;
+        background-color: #c0e1cf;
 
         &:hover {
             border: 1px solid #c0e1cf;
@@ -99,16 +84,6 @@ section {
 
 }
 
-// .articles-wrapper {
-//     @include centered;
-//     position: relative;
-
-//     display: flex;
-//     justify-content: space-between;
-//     gap: 30px;
-//     padding: 60px 0;
-
-// }
 .scrolling-arrow {
     @include centered;
     position: relative
@@ -116,15 +91,15 @@ section {
 
 .articles-wrapper {
     @include centered;
-    // position: relative;
 
     display: flex;
     justify-content: flex-start;
     gap: 30px;
+
     padding: 60px 12px;
     overflow-x: auto;
-    // 
 
+    //scroll bar styling, might not work on all devices
     &::-webkit-scrollbar {
         height: 8px;
     }

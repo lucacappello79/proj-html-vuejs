@@ -37,9 +37,8 @@ export default {
                     </li>
                 </ul>
 
-                <!-- <div class="header-dot-menu" @click="isMenuOpen = !isMenuOpen"> -->
                 <div class="header-dot-menu" @mouseover="isMenuOpen = true">
-                    <img src="/img/svg-1.svg" alt="">
+                    <img src="/img/svg-1.svg" alt="drop down menu">
                 </div>
 
                 <div class="dot-menu" v-show="isMenuOpen">
@@ -102,13 +101,14 @@ header {
 
         li:hover::before {
 
+            position: absolute;
+
             width: 115%;
             height: 5px;
             background-color: #e57c78;
             opacity: 0.4;
 
             content: "";
-            position: absolute;
             bottom: 5px;
         }
     }
@@ -124,7 +124,6 @@ header {
         right: -18px;
 
         background-color: white;
-        // width: 100%;
         width: auto;
         padding: 15px;
         z-index: 10;

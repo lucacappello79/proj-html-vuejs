@@ -33,28 +33,6 @@ export default {
 
 </script>
 
-
-<!-- <template>
-    <section id="workflow">
-        <div class="scroll-up" @click="scrollTop">
-            <i class="fa-solid fa-arrow-up-long"></i>
-        </div>
-        <div class="workflow-wrapper">
-            <div class="background-image-container"></div>
-            <div class="section-title">
-                Working
-                <strong>process</strong>
-            </div>
-            <div class="process">
-                <AppWorkFlowCard v-for="(item, index) in store.workflowSteps" :icon="item.icon" :color="item.color"
-                    :title="item.title" :description="item.description">
-                </AppWorkFlowCard>
-            </div>
-
-        </div>
-    </section>
-</template> -->
-
 <template>
     <section id="workflow">
 
@@ -80,29 +58,27 @@ export default {
 <style lang="scss" scoped>
 @use "../scss/variables" as *;
 
-// section {
-//     position: relative;
-// }
-
 .scroll-up {
-    width: 27px;
-    height: 27px;
-    color: white;
-    background-color: #f0817b;
     position: absolute;
-    bottom: 25px;
     right: 15px;
+    bottom: 25px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     z-index: 999;
+
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    color: white;
+    background-color: #f0817b;
 
     &:hover {
         border: 1px solid #f0817b;
         background-color: #fff;
-        scale: 1.05;
         color: #f0817b;
+        scale: 1.05;
         z-index: 999;
     }
 }
@@ -111,18 +87,19 @@ export default {
 
     @include centered();
 
-    text-align: center;
     position: relative;
-    padding: 50px 0 80px;
     text-align: center;
+    padding: 50px 0 80px;
 
     .background-image-container {
         position: absolute;
-        z-index: 0;
-        width: 73%;
-        height: 100%;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 0;
+
+        width: 73%;
+        height: 100%;
+
         background-image: url('/img/svg-3.svg');
         background-repeat: no-repeat;
         background-position-y: 40%;

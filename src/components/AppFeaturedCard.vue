@@ -33,7 +33,7 @@ export default {
 
 <template>
     <div class="card" @mouseover="isHover = true" @mouseleave="isHover = false">
-        <img :src="img" alt="fnf">
+        <img :src="img" alt="card image">
         <div class="card-overlay" v-show="isHover" :style="{ backgroundColor: background }">
             <h4>{{ title }}</h4>
             <small>{{ description }}</small>
@@ -64,24 +64,27 @@ export default {
     .card-overlay {
         position: absolute;
         top: 43%;
-        width: 43%;
-        height: 15%;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        transition: all 0.3s ease-in-out;
+
+        width: 43%;
+        height: 15%;
         padding-left: 13px;
 
+        transition: all 0.3s ease-in-out;
+
         h4 {
-            font-size: 0.8em;
             margin-bottom: 5px;
+            font-size: 0.8em;
             font-weight: 500;
         }
 
         small {
-            font-size: 0.7em;
             text-align: center;
+            font-size: 0.7em;
             font-style: italic;
         }
     }

@@ -32,20 +32,6 @@ export default {
 
 </script>
 
-
-<!-- <template>
-    <section id="featured">
-        <div class="scroll-up" @click="scrollTop">
-            <i class="fa-solid fa-arrow-up-long"></i>
-        </div>
-        <div class="featured-wrapper">
-            <AppFeaturedCard v-for="(item, index) in store.featuredCards" :img="item.img" :title="item.title"
-                :description="item.description" :background="item.color">
-            </AppFeaturedCard>
-        </div>
-    </section>
-</template> -->
-
 <template>
     <section id="featured">
 
@@ -54,10 +40,10 @@ export default {
                 <i class="fa-solid fa-arrow-up-long"></i>
             </div>
             <div class="cart">
-                <img src="/img/svg-6.svg" alt="fnf">
+                <img src="/img/svg-6.svg" alt="cart icon">
             </div>
             <div class="circle">
-                <img src="/img/svg-7.svg" alt="fnf">
+                <img src="/img/svg-7.svg" alt="circle icon">
             </div>
             <AppFeaturedCard v-for="(item, index) in store.featuredCards" :img="item.img" :title="item.title"
                 :description="item.description" :background="item.color">
@@ -73,32 +59,6 @@ export default {
 <style lang="scss" scoped>
 @use "../scss/variables" as *;
 
-// section {
-//     position: relative;
-// }
-
-// .scroll-up {
-//     width: 27px;
-//     height: 27px;
-//     color: white;
-//     background-color: #c0e1cf;
-//     position: absolute;
-//     bottom: 45%;
-//     right: 15px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     border-radius: 50%;
-//     z-index: 999;
-
-//     &:hover {
-//         border: 1px solid #c0e1cf;
-//         background-color: #fff;
-//         scale: 1.05;
-//         color: #c0e1cf;
-//     }
-// }
-
 .featured-wrapper {
     @include centered();
 
@@ -110,12 +70,14 @@ export default {
     .circle {
         position: absolute;
         right: 0;
-        z-index: 3;
-        width: 25px;
-        height: 25px;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
+        z-index: 3;
+        width: 25px;
+        height: 25px;
     }
 
     .circle {
@@ -140,18 +102,20 @@ export default {
 
 
     .scroll-up {
-        width: 27px;
-        height: 27px;
-        color: white;
-        background-color: #c0e1cf;
         position: absolute;
         bottom: 45%;
         right: 15px;
+
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 50%;
         z-index: 999;
+
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        color: white;
+        background-color: #c0e1cf;
 
         &:hover {
             border: 1px solid #c0e1cf;

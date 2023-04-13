@@ -15,6 +15,8 @@ export default {
         }
     },
 
+
+    //mouse pointer turning into a dot when hovering over the contact button//
     mounted() {
         const buttonContainer = this.$refs.buttonContainer;
         const cursorDot = this.$refs.cursorDot;
@@ -94,9 +96,7 @@ section {
         @include centered-inner;
         color: grey;
         font-size: 15px;
-        // margin-bottom: 40px;
         margin: 30px auto 40px;
-
     }
 }
 
@@ -120,22 +120,11 @@ section {
         color: white;
     }
 
-    // &:hover::before {
-    //     content: '';
-    //     position: absolute;
-    //     width: 10px;
-    //     height: 10px;
-    //     border-radius: 50%;
-    //     background-color: black;
-    //     top: 50%;
-    //     left: 50%;
-    //     transform: translate(-50%, -50%);
-    //     pointer-events: none;
-    // }
-
     .cursor-dot {
         display: none;
+
         position: absolute;
+
         width: 10px;
         height: 10px;
         border-radius: 50%;

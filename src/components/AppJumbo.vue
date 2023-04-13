@@ -106,8 +106,8 @@ export default {
                     <img src="/img/short-slider-rev-1-img-2.png" alt="decoration">
                 </div>
 
-                <img :src="currentImage" alt="fnf">
-                <img v-if="currentImageIndex === 0" src="/img/h-2-slider-img-16.png" alt="fnf">
+                <img :src="currentImage" alt="slider image">
+                <img v-if="currentImageIndex === 0" src="/img/h-2-slider-img-16.png" alt="slider image">
 
             </div>
 
@@ -137,6 +137,7 @@ section {
             top: 50%;
             right: 20px;
             transform: translate(0, -50%);
+            z-index: 2;
 
             display: flex;
             justify-content: center;
@@ -146,7 +147,6 @@ section {
             width: 25px;
             background-color: pink;
             border-radius: 50%;
-            z-index: 2;
 
             &:hover {
                 scale: 1.1;
@@ -158,6 +158,7 @@ section {
             top: 50%;
             left: 20px;
             transform: translate(0, -50%);
+            z-index: 2;
 
             display: flex;
             justify-content: center;
@@ -167,7 +168,6 @@ section {
             width: 25px;
             background-color: pink;
             border-radius: 50%;
-            z-index: 2;
 
             &:hover {
                 scale: 1.1;
@@ -235,6 +235,11 @@ section {
 
             font-size: 10px;
             font-weight: 600;
+
+            &:hover {
+                background-color: #e1c0b0;
+                color: white;
+            }
         }
     }
 

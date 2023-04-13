@@ -34,7 +34,6 @@ export default {
     <div class="card">
 
         <div class="card-img">
-            <!-- <img :src="img" alt="fnf"> -->
             <div class="icon" :style="{ color: color }">
                 <i :class="icon"></i>
             </div>
@@ -57,24 +56,27 @@ export default {
 @use "../scss/variables" as *;
 
 .card {
-    width: calc(100% / 4);
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    width: calc(100% / 4);
+
     .card-img {
-        background-color: #faf7f1;
-        width: 40%;
-        padding-top: 40%;
-        border-radius: 50%;
         position: relative;
 
+        width: 40%;
+        padding-top: 40%;
+        background-color: #faf7f1;
+        border-radius: 50%;
+
         i {
-            font-size: 30px;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            font-size: 30px;
         }
     }
 
