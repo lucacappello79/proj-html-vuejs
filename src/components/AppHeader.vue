@@ -11,6 +11,7 @@ export default {
         return {
 
             store,
+            isMenuOpen: false,
 
         }
     },
@@ -26,7 +27,8 @@ export default {
                 <img src="img/logo-sidearea-1.png" alt="logo image">
             </div>
 
-            <div class="header-menu">
+            <div class="header-menu" @mouseleave="isMenuOpen = false">
+
                 <ul>
                     <li v-for="(item, index) in store.menuItems">
                         <a :href="'#' + item.id">
@@ -35,10 +37,23 @@ export default {
                     </li>
                 </ul>
 
-                <div class="header-dot-menu">
+                <!-- <div class="header-dot-menu" @click="isMenuOpen = !isMenuOpen"> -->
+                <div class="header-dot-menu" @mouseover="isMenuOpen = true">
                     <img src="/img/svg-1.svg" alt="">
                 </div>
+
+                <div class="dot-menu" v-show="isMenuOpen">
+                    <ul>
+                        <li v-for="(item, index) in store.menuItems">
+                            <a :href="'#' + item.id" @click="isMenuOpen = false">
+                                {{ item.label.toUpperCase() }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
+
         </div>
     </header>
 </template>
@@ -61,6 +76,7 @@ header {
 }
 
 .header-menu {
+    position: relative;
     display: flex;
     gap: 15px;
 
@@ -99,6 +115,31 @@ header {
 
     .header-dot-menu {
         margin-left: 20px;
+    }
+
+    .dot-menu {
+
+        position: absolute;
+        top: 25px;
+        right: -18px;
+
+        background-color: white;
+        // width: 100%;
+        width: auto;
+        padding: 15px;
+        z-index: 10;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border: 1px solid black;
+            padding: 15px;
+
+            li {
+                border-bottom: 1px solid grey;
+            }
+        }
     }
 
 }

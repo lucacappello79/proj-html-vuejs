@@ -80,7 +80,7 @@ export default {
 
                 <h1>Devotion that <br>never <strong>ends</strong></h1>
                 <small>Young at heart, life just started! Even if you are a senior don't hesitate <br> to grab
-                    yourskating-board and live your best life</small>
+                    your skating-board and live your best life</small>
                 <button>READ MORE</button>
 
             </div>
