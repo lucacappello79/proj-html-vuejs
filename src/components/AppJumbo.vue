@@ -25,10 +25,10 @@ export default {
 
         <div class="slider-wrapper">
 
-            <div class="arrow-left">
+            <div id="arrow-left">
                 <i class="fa-solid fa-chevron-left"></i>
             </div>
-            <div class="arrow-right">
+            <div id="arrow-right">
                 <i class="fa-solid fa-chevron-right"></i>
             </div>
             <div class="dots-wrapper">
@@ -88,7 +88,7 @@ section {
         gap: 30px;
         height: 350px;
 
-        .arrow-right {
+        #arrow-right {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -102,9 +102,13 @@ section {
             z-index: 2;
 
             transform: translate(0, -50%);
+
+            &:hover {
+                scale: 1.1;
+            }
         }
 
-        .arrow-left {
+        #arrow-left {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -118,6 +122,10 @@ section {
             z-index: 2;
 
             transform: translate(0, -50%);
+
+            &:hover {
+                scale: 1.1;
+            }
         }
 
         i {
@@ -187,14 +195,6 @@ section {
         align-items: center;
         gap: 20px;
         margin-left: 50px;
-
-        // display: flex;
-        // align-items: center;
-        // justify-content: flex-end; // You can adjust this value to change the position
-        // gap: 50px;
-        // margin-left: auto; // Add this line to push the images towards the right
-        // width: 70%; // Add this line to control the width of the .slider-img container
-
 
         img {
             height: 70%;
